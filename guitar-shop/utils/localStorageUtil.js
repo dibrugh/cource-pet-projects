@@ -34,7 +34,6 @@ class LocalStorageUtil {
             products.splice(index, 1);
         }
 
-        products.push(id);
         // В setItem первый аргумент - куда, второй аргумент - что (принимает только строку).
         localStorage.setItem(this.keyName, JSON.stringify(products));
 
