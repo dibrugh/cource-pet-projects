@@ -1,0 +1,15 @@
+.header-containter {
+    display: flex;
+    height: 50px;
+    padding: var(--spacing-small);
+    background-color: var(--color-medium);
+
+}
+
+.header-counter {
+    /* Прижать к левой стороне или justify-content: end, или margin-left: auto;  */
+    margin-left: auto;
+    padding-right: var(--spacing-small);
+    font-weight: bold;
+    cursor: pointer;
+}

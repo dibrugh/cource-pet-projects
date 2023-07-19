@@ -22,6 +22,8 @@ class Products {
             element.classList.remove(this.classNameActive);
             element.innerHTML = this.labelAdd;
         }
+        // Чтобы при добавлении товаров их количество в корзине менялось динамически вешаем обработчик событий/передаём в onclick-функцию
+        headerPage.render(products.length)
     }
 
     render() {
