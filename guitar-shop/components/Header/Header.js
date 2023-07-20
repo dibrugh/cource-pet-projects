@@ -1,9 +1,13 @@
 class Header {
+    // Создаём метод, который будет открывать/отрисовывать корзину
+    handlerOpenShoppingPage() {
+        shoppingPage.render();
+    }
 
     render(count) {
         const html = `
             <div class = "header-containter">
-                <div class = "header-counter">
+                <div class = "header-counter" onclick ="headerPage.handlerOpenShoppingPage();">
                 🗑️ ${count}
                 </div>
             </div>
