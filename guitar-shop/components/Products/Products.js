@@ -75,4 +75,6 @@ class Products {
 }
 
 const productsPage = new Products();
-productsPage.render();
+
+/* // Переношу строку ниже в index.js в рамках рефакторинга
+productsPage.render(); */

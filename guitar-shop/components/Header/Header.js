@@ -18,8 +18,10 @@ class Header {
 }
 
 const headerPage = new Header();
-// Получаем количество товаров в корзине
+
+// В рамках рефакторинга переношу строчки ниже в index.js
+/* // Получаем количество товаров в корзине
 const productsStore = localStorageUtil.getProducts();
 
 // Т.к мы получаем массив, можем просто смотреть его длинну и передавать её на рендер
-headerPage.render(productsStore.length);
+headerPage.render(productsStore.length); */
