@@ -1,1 +1,0 @@
-# cource-pet-projects
