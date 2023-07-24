@@ -5,7 +5,7 @@ class Products {
 
     constructor() {
         this.classNameActive = 'products-element__btn_active';
-        this.labelAdd = 'Добавить в корзину 🗑️';
+        this.labelAdd = 'Добавить в корзину';
         this.labelRemove = 'Удалить из корзины';
     }
 
