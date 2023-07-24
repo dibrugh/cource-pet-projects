@@ -23,12 +23,12 @@ class Products {
             element.innerHTML = this.labelAdd;
         }
         // Чтобы при добавлении товаров их количество в корзине менялось динамически вешаем обработчик событий/передаём в onclick-функцию
-        headerPage.render(products.length)
+        headerPage.render(products.length);
     }
 
     render() {
         // Обращаемся к объекту класса, созданного для работы с Local Storage
-        const productsStore = localStorageUtil.getProducts()
+        const productsStore = localStorageUtil.getProducts();
 
 
         let htmlCatalogue = '';

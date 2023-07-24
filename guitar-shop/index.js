@@ -35,7 +35,10 @@ fetch('server/catalogue.json')
     })
     // Обрабатываю ошибки
     .catch(error => {
-        console.log(error)
+        // Т.к ошибка это уже результат, убираю pre-loader
+        spinnerPage.handleClear();
+        // Вызываю метод инстанса Error, т.е обрабатываю ошибку
+        errorPage.render();
     });
 
 

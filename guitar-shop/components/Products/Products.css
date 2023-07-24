@@ -20,7 +20,6 @@
 .products-element__name {
     /* Прижать элемент к верхнему краю */
     margin-bottom: auto;
-	text-transform: uppercase;
 	font-weight: bold;
 }
 
@@ -52,5 +51,5 @@
 .products-element__btn_active {
     /* Чтобы рамка не увеличивалась */
     border: 1px solid transparent;
-	background-image: var(--linear-gradient);
+    background-image: var(--linear-gradient);
 }
