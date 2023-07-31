@@ -1,0 +1,38 @@
+:root {
+    --color-dark: #222;
+    --color-blue: #3199dc;
+
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+/* Стилизация scroll-а для firefox */
+* {
+    scrollbar-color: var(--color-blue) var(--color-dark);
+    scrollbar-width: thin;
+}
+/* Стилизация scroll-а для chrome */
+::-webkit-scrollbar {
+    /* Для вертикального */
+    width: 8px;
+    /* Для горизонтального */
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--color-blue);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--color-dark);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-dark);
+    
+}
