@@ -22,3 +22,7 @@ build-script - to build the project.
 7. Index.js 
     7.1 Write an asyc IIFE that gets final data from the resolved promise
 
+8. Components
+    8.1 Create new component - App (folder App/App.js, App.css)
+    8.2 Move constants to App.js from index.js (instead of them we'll just use the method of App class)
+    8.3 Basic styles for App.js
