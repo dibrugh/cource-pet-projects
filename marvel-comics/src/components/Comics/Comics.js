@@ -1,4 +1,4 @@
-import { API_URL, URL_COMICS, IMG_STANDARD_XLARGE, IMG_NOT_AVAILABLE } from '../../constants/api';
+import { API_URL, URL_COMICS, IMG_STANDARD_XLARGE, IMG_NOT_AVAILABLE, URL_CHARACTERS } from '../../constants/api';
 import { getDataApi } from '../../utils/getDataApi';
 import { ROOT_INDEX, ROOT_MODAL } from '../../constants/root';
 
@@ -19,15 +19,21 @@ class Comics {
         // Для thumbnail у нас деструктуризация внутри деструктуризации
         data.forEach(({ id, title, thumbnail: { path, extension } }) => {
 
+
             if (!path.includes(IMG_NOT_AVAILABLE)) {
+                // Мы хотим формировать url, на который нужно отправить запрос, чтобы получить героев комиксов для отрисовки в модалке
+                // Должно получиться в сумме v1/public/comics/{comicId}/characters
+                const uri = API_URL + URL_COMICS + '/' + id + '/' + URL_CHARACTERS;
+
                 // Т.к к нам отдельно приходят путь и расширение, нужно корректно сформировать ссылку
                 const imgSrc = path + '/' + IMG_STANDARD_XLARGE + '.' + extension;
 
                 // Комиксы, в url которых есть image_not_available, не имеют обложки
 
                 // Теперь формируем содержание карточек
+                // Чтобы можно было передать uri в другой метод добавляем кастомный аттрибут ("data-") для элемента
                 hmtlContent += `
-                <li class="comics__item">
+                <li class="comics__item" data-uri="${uri}">
                     <span class="comics__name">${title}</span>
                     <img class="comics__img" src="${imgSrc}">
                 </li>
@@ -45,7 +51,18 @@ class Comics {
         // Остаётся добавить всё в ROOT элемент на странице
         ROOT_INDEX.innerHTML = htmlWrapper;
     }
+    // Соответственно, чтобы это работало, нужно вызвать метод в index.js
+    eventListener() {
+        document.querySelectorAll('.comics__item').forEach(element => {
+            // Получаем uri, который мы передавали в элемент в предыдущем методе render()
+            const uri = element.getAttribute('data-uri');
 
+            element.addEventListener('click', () => {
+
+                console.log(uri);
+            });
+        });
+    }
 }
 
 export default new Comics();
