@@ -47,4 +47,8 @@ build-script - to build the project.
     8.2.4 Implement new method - 'eventListener', there we pass an URI formed in render() method; We need URI to send a request and
     get list of characters of a specific comics;
 
-9. ///To do style modules to eliminate potential conflics if'd use same class names (e.i we will isolate .css files)
+9. ///To do style modules to eliminate potential conflics/redefinings if we'd use same class names (e.i we will isolate .css files)
+Modules can be used only for classes
+    9.1 npm i postcss-modules --save-dev
+    9.2 Rename module as 'Name.module.css' and fix imports
+    9.3 Create global classes in App.js (using :global(.class){})
