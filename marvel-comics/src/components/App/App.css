@@ -8,7 +8,6 @@
     --spacing-small: 10px;
     --spacing-medium: 12px;
     --spacing-large: 20px;
-
 }
 
 *, ::after, ::before {
@@ -44,4 +43,27 @@ body {
     font-size: 16px;
     line-height: 1.7;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Т.к теперь используются изолированные модули postcss, чтобы влиять на классы вне App.css, можно обращаться через :global */
+/* Таким образом мы делаем заготовку глобальных классов для использования в дальнейшем */
+:global(.btn) {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Чтобы не прописывать это для каждой картинки, создаём отдельные глобальные классы */
+
+:global(.img-contain) {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+:global(.img-cover) {
+    display: block;
+    object-fit: cover;
+    object-position: center;
 }

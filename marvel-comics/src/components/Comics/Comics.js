@@ -3,7 +3,9 @@ import { getDataApi } from '../../utils/getDataApi';
 import { ROOT_INDEX, ROOT_MODAL } from '../../constants/root';
 
 // Можно целеком импортировать файл CSS
-import './Comics.css'
+import classes from './Comics.module.css'
+// Т.к используются postcss модули, импорт будет возвращать объект с ключами в виде классов и значений = класс+хэш
+console.log(classes)
 
 class Comics {
 
@@ -33,9 +35,9 @@ class Comics {
                 // Теперь формируем содержание карточек
                 // Чтобы можно было передать uri в другой метод добавляем кастомный аттрибут ("data-") для элемента
                 hmtlContent += `
-                <li class="comics__item" data-uri="${uri}">
-                    <span class="comics__name">${title}</span>
-                    <img class="comics__img" src="${imgSrc}">
+                <li class="comics__item ${classes.comics__item}" data-uri="${uri}">
+                    <span class="${classes.comics__name}">${title}</span>
+                    <img class="img-contain ${classes.comics__img}" src="${imgSrc}">
                 </li>
             `;
             }
@@ -43,7 +45,7 @@ class Comics {
 
         // Т.к ранее мы формировали только сами карточки, теперь их нужно организовать в общий список
         const htmlWrapper = `
-            <ul class="comics__containter">
+            <ul class="${classes.comics__containter}">
                 ${hmtlContent}
             </ul>
         `;
@@ -53,6 +55,7 @@ class Comics {
     }
     // Соответственно, чтобы это работало, нужно вызвать метод в index.js
     eventListener() {
+        // Т.к мы начали использовать модули, нужно отдельно добавить элементу класс .comics__item, дабы код ниже прододжал работать
         document.querySelectorAll('.comics__item').forEach(element => {
             // Получаем uri, который мы передавали в элемент в предыдущем методе render()
             const uri = element.getAttribute('data-uri');
