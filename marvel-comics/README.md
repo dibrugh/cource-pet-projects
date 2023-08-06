@@ -36,18 +36,24 @@ build-script - to build the project.
 
 8. Components
     8.1 Create new component - App (folder App/App.js, App.css, also index.js for correct bundling)
-    8.1.1 Move constants to App.js from index.js (instead of them we'll just use the method of App class)
-    8.1.2 Basic styles for App.js
-    8.2.1 => 8.1.3 As we extracted the function from App class to Comics, inside App.render() we can just call Comics.render()
+        8.1.1 Move constants to App.js from index.js (instead of them we'll just use the method of App class)
+        8.1.2 Basic styles for App.js
+        8.2.1 => 8.1.3 As we extracted the function from App class to Comics, inside App.render() we can just call Comics.render()
 
     8.2 Create new component - Comics (Comics.js, Comics.css, index.js)
-    8.2.1 Move imports and render method from App.js to Comics.js
-    8.2.2 Create render method that will take data from Marvel API, loop through, take cards with correct img path and fill in html;
-    8.2.3 Add styles to Comics.css
-    8.2.4 Implement new method - 'eventListener', there we pass an URI formed in render() method; We need URI to send a request and
-    get list of characters of a specific comics;
+        8.2.1 Move imports and render method from App.js to Comics.js
+        8.2.2 Create render method that will take data from Marvel API, loop through, take cards with correct img path and fill in html;
+        8.2.3 Add styles to Comics.css
+        8.2.4 Implement new method - 'eventListener', there we pass an URI formed in render() method; We need URI to send a request and
+        get list of characters of a specific comics;
+        8.3.1 => 8.2.5 Create new method - renderComics to validate data;
 
-9. ///To do style modules to eliminate potential conflics/redefinings if we'd use same class names (e.i we will isolate .css files)
+    8.3 Create new component - Error
+        8.3.1 Create new Error class and export an instance, then import to Comics.js
+        8.3.2 Add styles to Error
+
+
+9. Implement style modules to eliminate potential conflics/redefinings if we'd use same class names (e.i we will isolate .css files)
 Modules can be used only for classes
     9.1 npm i postcss-modules --save-dev
     9.2 Rename module as 'Name.module.css' and fix imports
