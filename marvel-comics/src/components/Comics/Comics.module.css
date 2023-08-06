@@ -30,17 +30,3 @@
 .comics__img {
     width: 100%;
 }
-
-/* Чтобы не прописывать для каждой картинки, создаём отдельные классы */
-
-:global(.img-contain) {
-    display: block;
-    object-fit: contain;
-    object-position: center;
-}
-
-:global(.img-cover) {
-    display: block;
-    object-fit: contain;
-    object-position: center;
-}
