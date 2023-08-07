@@ -13,6 +13,8 @@ Comics.js imports constants and use them inside Comics.render() to get data
     1.2 Modify package.json (scripts). Add start-script that is going to be used in the beginning of iteration (so parcel'll track changes);
 build-script - to build the project.
     1.3 nmp run start
+    1.4 (fix) configured post-css to have correct work of :global classes
+
 2. Index.html
     2.1 Add root elements (2 states r planned, so 2 root elements are to be created)
 3. Create .gitignore
@@ -51,6 +53,9 @@ build-script - to build the project.
     8.3 Create new component - Error
         8.3.1 Create new Error class and export an instance, then import to Comics.js
         8.3.2 Add styles to Error
+
+    8.4 Create new component - Characters
+    8.5 Create new mini-component - Notification
 
 
 9. Implement style modules to eliminate potential conflics/redefinings if we'd use same class names (e.i we will isolate .css files)
