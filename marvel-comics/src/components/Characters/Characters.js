@@ -1,3 +1,4 @@
+import { IMG_NOT_AVAILABLE } from '../../constants/api';
 import { ROOT_MODAL } from '../../constants/root';
 import { IMG_STANDARD_XLARGE } from '../../constants/api';
 import { getDataApi } from '../../utils/getDataApi';
@@ -18,6 +19,7 @@ class Characters {
 
         // Нужны name, thumbnail.extension и thumbnail.path
         data.forEach(({ name, thumbnail: { extension, path } }) => {
+            if (!path.includes(IMG_NOT_AVAILABLE)) {
             // Путь строим точно так же, как в Comics.js
             const imgSrc = path + '/' + IMG_STANDARD_XLARGE + '.' + extension;
 
@@ -28,6 +30,7 @@ class Characters {
                     <span class = "${classes.characters__name}">${name}</span>
                 </li>
             `;
+            };
         });
 
         // Собираем единый список и добавляем кнопку закрытия (навешиваем onlick и находим по id и чистим содержимое)
