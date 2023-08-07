@@ -1,4 +1,7 @@
 {
+  "@parcel/transformer-css": {
+      "cssModules": true
+  },
   "name": "marvel-comics",
   "version": "1.0.0",
   "scripts": {
