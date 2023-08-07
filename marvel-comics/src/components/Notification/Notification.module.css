@@ -14,15 +14,4 @@
     width: 30px;
     height: 30px;
     margin-left: var(--spacing-large);
-
-    /* Из нерабочего global */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
 }
-

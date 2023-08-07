@@ -1,6 +1,7 @@
 import { ROOT_MODAL } from '../../constants/root';
 import { IMG_STANDARD_XLARGE } from '../../constants/api';
 import { getDataApi } from '../../utils/getDataApi';
+
 import Notification from '../Notification/Notification';
 
 import classes from './Characters.module.css';
@@ -23,9 +24,9 @@ class Characters {
             // Формируем чистые элементы, поэтому <li>
             hmtlContent += `
                 <li class = "${classes.characters__item}">
-                    <img src = "${imgSrc}" class = "img-cover ${classes.characters__img}">
+                <img class="img-cover ${classes.characters__img}" src="${imgSrc}">
                     <span class = "${classes.characters__name}">${name}</span>
-                <li>
+                </li>
             `;
         });
 

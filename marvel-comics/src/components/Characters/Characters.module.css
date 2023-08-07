@@ -65,10 +65,4 @@
     position: absolute;
     top: var(--spacing-large);
     right: var(--spacing-large);
-
-    /* Не работает :global(.btn) :( */
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
 }
