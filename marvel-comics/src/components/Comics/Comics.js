@@ -4,6 +4,8 @@ import { ROOT_INDEX, ROOT_MODAL } from '../../constants/root';
 
 import Error from '../Error/Error';
 
+import Characters from '../Characters/Characters';
+
 // Можно целеком импортировать файл CSS
 import classes from './Comics.module.css'
 // Т.к используются postcss модули, импорт будет возвращать объект с ключами в виде классов и значений = класс+хэш
@@ -67,8 +69,8 @@ class Comics {
             const uri = element.getAttribute('data-uri');
 
             element.addEventListener('click', () => {
-
-                console.log(uri);
+                // По клику вызываем render у класса Characters
+                Characters.render(uri);
             });
         });
     }
