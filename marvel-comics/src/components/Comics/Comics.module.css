@@ -1,0 +1,32 @@
+.comics__containter {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.comics__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    margin: var(--spacing-large);
+    transition: 0.5s;
+    background-color: var(--color-light);
+    cursor: pointer;
+}
+
+.comics__item:hover {
+    transform: rotate(-3deg) scale(0.95);
+    /* Увеличение насыщенности */
+    filter: saturate(150%);
+}
+
+.comics__name {
+    display: flex;
+    /* Центрируем по вертикали и горизонтали */
+    margin: auto;
+    padding: var(--spacing-small) var(--spacing-medium);
+}
+
+.comics__img {
+    width: 100%;
+}
