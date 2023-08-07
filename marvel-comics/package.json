@@ -6,7 +6,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "parcel public/index.html --open",
-    "build": "parcel build public/index.html"
+    "build": "parcel build public/index.html",
+    "deploy": "rm -rf dist/ && npm run build && gh-pages/marvel-comics -d dist"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
